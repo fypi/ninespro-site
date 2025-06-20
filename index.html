@@ -19,6 +19,12 @@
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.3);
     }
+    .modal {
+      display: none;
+    }
+    .modal.active {
+      display: flex;
+    }
   </style>
 </head>
 
@@ -29,62 +35,62 @@
       <div class="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-sky-600 via-indigo-500 to-blue-300">NS</div>
       <span class="text-xl font-medium text-gray-800">NinesPro</span>
     </a>
-    <div class="flex items-center space-x-6">
+    <div class="flex items-center space-x-4">
       <nav class="hidden md:flex space-x-6 text-sm text-gray-700">
         <a href="#about" class="hover:text-black">关于</a>
         <a href="#services" class="hover:text-black">服务</a>
         <a href="#contact" class="hover:text-black">联系</a>
       </nav>
-      <select class="text-sm bg-transparent text-gray-600 border-none focus:outline-none">
-        <option>中文</option>
-        <option>English</option>
+      <select id="language-select" class="text-sm bg-transparent text-gray-600 border-none focus:outline-none">
+        <option value="zh">中文</option>
+        <option value="en">English</option>
       </select>
-      <a href="#" class="text-sm px-4 py-1 bg-gray-800 text-white rounded hover:bg-gray-700">登录</a>
-      <a href="#" class="text-sm px-4 py-1 border border-gray-800 text-gray-800 rounded hover:bg-gray-800 hover:text-white">注册</a>
+      <button onclick="toggleModal('login')" class="text-sm px-4 py-1 bg-gray-800 text-white rounded hover:bg-gray-700">登录</button>
+      <button onclick="toggleModal('register')" class="text-sm px-4 py-1 border border-gray-800 text-gray-800 rounded hover:bg-gray-800 hover:text-white">注册</button>
     </div>
   </header>
 
   <!-- Hero -->
   <section id="home" class="h-screen flex items-center justify-center text-center px-4 bg-gradient-to-br from-white via-blue-50 to-blue-100">
     <div class="max-w-2xl space-y-6" data-aos="fade-up">
-      <h1 class="text-5xl md:text-6xl font-black tracking-tight text-gray-900">Mastering the Ninth Realm</h1>
-      <p class="text-lg text-gray-500">极简之中，蕴藏非凡力量</p>
-      <a href="#about" class="inline-block mt-6 px-6 py-3 bg-black text-white rounded-full hover:bg-gray-900 transition">了解更多</a>
+      <h1 class="text-5xl md:text-6xl font-black tracking-tight text-gray-900 translatable" data-zh="Mastering the Ninth Realm" data-en="掌握第九领域">Mastering the Ninth Realm</h1>
+      <p class="text-lg text-gray-500 translatable" data-zh="极简之中，蕴藏非凡力量" data-en="Simplicity contains greatness.">极简之中，蕴藏非凡力量</p>
+      <a href="#about" class="inline-block mt-6 px-6 py-3 bg-black text-white rounded-full hover:bg-gray-900 transition translatable" data-zh="了解更多" data-en="Learn More">了解更多</a>
     </div>
   </section>
 
   <!-- About -->
   <section id="about" class="py-20 px-6 bg-gradient-to-br from-blue-50 via-white to-slate-100 text-center">
-    <h2 class="text-3xl font-bold mb-4">关于 NinesPro</h2>
-    <p class="text-gray-600 max-w-xl mx-auto">融合科技、艺术与人文，NinesPro 致力于构建未来感、信赖感与专业感并存的高端品牌体验。</p>
+    <h2 class="text-3xl font-bold mb-4 translatable" data-zh="关于 NinesPro" data-en="About NinesPro">关于 NinesPro</h2>
+    <p class="text-gray-600 max-w-xl mx-auto translatable" data-zh="融合科技、艺术与人文，NinesPro 致力于构建未来感、信赖感与专业感并存的高端品牌体验。" data-en="Blending technology, art and humanity, NinesPro crafts a future-ready, trustworthy and professional brand experience.">融合科技、艺术与人文，NinesPro 致力于构建未来感、信赖感与专业感并存的高端品牌体验。</p>
   </section>
 
   <!-- Services -->
   <section id="services" class="py-20 px-6 bg-gradient-to-br from-slate-100 via-white to-blue-50 text-center">
-    <h2 class="text-3xl font-bold mb-10">我们提供的服务</h2>
+    <h2 class="text-3xl font-bold mb-10 translatable" data-zh="我们提供的服务" data-en="Our Services">我们提供的服务</h2>
     <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
       <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transition" data-aos="fade-up">
         <div class="text-3xl mb-4">🎨</div>
-        <h3 class="font-semibold text-xl mb-2">品牌设计</h3>
-        <p class="text-gray-500 text-sm">打造令人记住的视觉与故事。</p>
+        <h3 class="font-semibold text-xl mb-2 translatable" data-zh="品牌设计" data-en="Brand Design">品牌设计</h3>
+        <p class="text-gray-500 text-sm translatable" data-zh="打造令人记住的视觉与故事。" data-en="Crafting memorable visuals and narratives.">打造令人记住的视觉与故事。</p>
       </div>
       <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
         <div class="text-3xl mb-4">💻</div>
-        <h3 class="font-semibold text-xl mb-2">定制开发</h3>
-        <p class="text-gray-500 text-sm">企业站点、系统平台、前后端一体化。</p>
+        <h3 class="font-semibold text-xl mb-2 translatable" data-zh="定制开发" data-en="Custom Development">定制开发</h3>
+        <p class="text-gray-500 text-sm translatable" data-zh="企业站点、系统平台、前后端一体化。" data-en="Corporate sites, platforms, and full-stack systems.">企业站点、系统平台、前后端一体化。</p>
       </div>
       <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
         <div class="text-3xl mb-4">📊</div>
-        <h3 class="font-semibold text-xl mb-2">增长策略</h3>
-        <p class="text-gray-500 text-sm">洞察趋势，精准投放，提升品牌声量。</p>
+        <h3 class="font-semibold text-xl mb-2 translatable" data-zh="增长策略" data-en="Growth Strategy">增长策略</h3>
+        <p class="text-gray-500 text-sm translatable" data-zh="洞察趋势，精准投放，提升品牌声量。" data-en="Trend insights, precise campaigns, and brand amplification.">洞察趋势，精准投放，提升品牌声量。</p>
       </div>
     </div>
   </section>
 
   <!-- Contact -->
   <section id="contact" class="py-20 px-6 bg-gradient-to-br from-white via-slate-50 to-blue-100 text-center">
-    <h2 class="text-3xl font-bold mb-6">联系 NinesPro</h2>
-    <p class="text-gray-600 max-w-xl mx-auto mb-6">项目合作、品牌咨询、服务定制，欢迎联系我们</p>
+    <h2 class="text-3xl font-bold mb-6 translatable" data-zh="联系 NinesPro" data-en="Contact NinesPro">联系 NinesPro</h2>
+    <p class="text-gray-600 max-w-xl mx-auto mb-6 translatable" data-zh="项目合作、品牌咨询、服务定制，欢迎联系我们" data-en="For collaboration, consultation or services, feel free to contact us.">项目合作、品牌咨询、服务定制，欢迎联系我们</p>
     <div class="max-w-md mx-auto space-y-6">
       <div class="flex items-center justify-center space-x-4">
         <span class="text-xl">📧</span>
@@ -92,11 +98,31 @@
       </div>
       <div class="flex items-center justify-center space-x-4">
         <span class="text-xl">📱</span>
-        <span class="text-gray-700">微信扫码联系</span>
+        <span class="text-gray-700 translatable" data-zh="微信扫码联系" data-en="Scan to connect via WeChat">微信扫码联系</span>
       </div>
       <img src="/qr-placeholder.png" alt="微信二维码" class="w-32 h-32 mx-auto rounded shadow border">
     </div>
   </section>
+
+  <!-- Modals -->
+  <div id="modal-login" class="modal fixed inset-0 bg-black/40 items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-xl w-80">
+      <h2 class="text-xl font-semibold mb-4">登录</h2>
+      <input type="text" placeholder="用户名" class="w-full mb-3 p-2 border rounded">
+      <input type="password" placeholder="密码" class="w-full mb-3 p-2 border rounded">
+      <button class="w-full bg-black text-white py-2 rounded">提交</button>
+    </div>
+  </div>
+
+  <div id="modal-register" class="modal fixed inset-0 bg-black/40 items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-xl w-80">
+      <h2 class="text-xl font-semibold mb-4">注册</h2>
+      <input type="text" placeholder="用户名" class="w-full mb-3 p-2 border rounded">
+      <input type="email" placeholder="邮箱" class="w-full mb-3 p-2 border rounded">
+      <input type="password" placeholder="密码" class="w-full mb-3 p-2 border rounded">
+      <button class="w-full bg-black text-white py-2 rounded">提交</button>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="bg-white text-center py-6 text-sm text-gray-400">
@@ -104,7 +130,22 @@
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
+  <script>
+    AOS.init();
+
+    function toggleModal(type) {
+      document.getElementById('modal-login').classList.remove('active');
+      document.getElementById('modal-register').classList.remove('active');
+      document.getElementById(`modal-${type}`).classList.add('active');
+    }
+
+    document.getElementById('language-select').addEventListener('change', function () {
+      const lang = this.value;
+      document.querySelectorAll('.translatable').forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
+      });
+    });
+  </script>
 </body>
 
 </html>
