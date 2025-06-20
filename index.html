@@ -11,7 +11,7 @@
   <style>
     body {
       font-family: 'Helvetica Neue', 'Segoe UI', sans-serif;
-      background: #fff;
+      background: #f9fafb;
       color: #111827;
     }
     .glass {
@@ -29,15 +29,23 @@
       <div class="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-sky-600 via-indigo-500 to-blue-300">NS</div>
       <span class="text-xl font-medium text-gray-800">NinesPro</span>
     </a>
-    <nav class="hidden md:flex space-x-6 text-sm text-gray-700">
-      <a href="#about" class="hover:text-black">关于</a>
-      <a href="#services" class="hover:text-black">服务</a>
-      <a href="#contact" class="hover:text-black">联系</a>
-    </nav>
+    <div class="flex items-center space-x-6">
+      <nav class="hidden md:flex space-x-6 text-sm text-gray-700">
+        <a href="#about" class="hover:text-black">关于</a>
+        <a href="#services" class="hover:text-black">服务</a>
+        <a href="#contact" class="hover:text-black">联系</a>
+      </nav>
+      <select class="text-sm bg-transparent text-gray-600 border-none focus:outline-none">
+        <option>中文</option>
+        <option>English</option>
+      </select>
+      <a href="#" class="text-sm px-4 py-1 bg-gray-800 text-white rounded hover:bg-gray-700">登录</a>
+      <a href="#" class="text-sm px-4 py-1 border border-gray-800 text-gray-800 rounded hover:bg-gray-800 hover:text-white">注册</a>
+    </div>
   </header>
 
   <!-- Hero -->
-  <section id="home" class="h-screen flex items-center justify-center text-center px-4">
+  <section id="home" class="h-screen flex items-center justify-center text-center px-4 bg-gradient-to-br from-white via-blue-50 to-blue-100">
     <div class="max-w-2xl space-y-6" data-aos="fade-up">
       <h1 class="text-5xl md:text-6xl font-black tracking-tight text-gray-900">Mastering the Ninth Realm</h1>
       <p class="text-lg text-gray-500">极简之中，蕴藏非凡力量</p>
@@ -46,13 +54,13 @@
   </section>
 
   <!-- About -->
-  <section id="about" class="py-20 px-6 bg-white text-center">
+  <section id="about" class="py-20 px-6 bg-gradient-to-br from-blue-50 via-white to-slate-100 text-center">
     <h2 class="text-3xl font-bold mb-4">关于 NinesPro</h2>
     <p class="text-gray-600 max-w-xl mx-auto">融合科技、艺术与人文，NinesPro 致力于构建未来感、信赖感与专业感并存的高端品牌体验。</p>
   </section>
 
   <!-- Services -->
-  <section id="services" class="py-20 bg-gray-50 px-6 text-center">
+  <section id="services" class="py-20 px-6 bg-gradient-to-br from-slate-100 via-white to-blue-50 text-center">
     <h2 class="text-3xl font-bold mb-10">我们提供的服务</h2>
     <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
       <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transition" data-aos="fade-up">
@@ -74,7 +82,7 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="py-20 px-6 bg-white text-center">
+  <section id="contact" class="py-20 px-6 bg-gradient-to-br from-white via-slate-50 to-blue-100 text-center">
     <h2 class="text-3xl font-bold mb-6">联系 NinesPro</h2>
     <p class="text-gray-600 max-w-xl mx-auto mb-6">项目合作、品牌咨询、服务定制，欢迎联系我们</p>
     <div class="max-w-md mx-auto space-y-6">
