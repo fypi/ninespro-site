@@ -15,7 +15,200 @@
       color: #111827;
       overflow-x: hidden;
     }
+    .glass {<!DOCTYPE html>
+<html lang="zh" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NinesPro · 掌握第九领域</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Helvetica Neue', 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #e0f2fe, #93c5fd, #60a5fa);
+      color: #111827;
+      overflow-x: hidden;
+    }
     .glass {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    .modal {
+      display: none;
+    }
+    .modal.active {
+      display: flex;
+    }
+    .background-effects {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      background: transparent;
+      pointer-events: none;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body class="relative">
+  <div class="background-effects">
+    <!-- 和平鸽与云朵图像可替换下方路径 -->
+    <img src="/cloud1.png" class="absolute top-10 left-[-10%] w-64 opacity-20 animate-pulse" />
+    <img src="/cloud2.png" class="absolute top-1/3 left-[-20%] w-72 opacity-20 animate-pulse" />
+    <img src="/dove1.png" class="absolute top-1/2 left-0 w-12 animate-ping" />
+    <img src="/dove2.png" class="absolute top-2/3 left-1/3 w-12 animate-ping" />
+    <!-- 其余和平鸽可继续添加 -->
+  </div>
+
+  <header class="fixed top-0 w-full z-50 glass py-4 px-6 shadow-sm flex justify-between items-center">
+    <a href="#" class="flex items-center space-x-3">
+      <div class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-sky-600 via-indigo-500 to-blue-300">NS</div>
+      <span class="text-xl font-medium text-gray-800">NinesPro</span>
+    </a>
+    <div class="flex items-center space-x-4">
+      <nav class="hidden md:flex space-x-6 text-sm text-gray-700">
+        <a href="#about" class="hover:text-black">关于</a>
+        <a href="#services" class="hover:text-black">服务</a>
+        <a href="#contact" class="hover:text-black">联系</a>
+      </nav>
+      <button onclick="toggleModal('login')" class="text-sm px-4 py-1 bg-gray-800 text-white rounded hover:bg-gray-700">登录</button>
+      <button onclick="toggleModal('register')" class="text-sm px-4 py-1 border border-gray-800 text-gray-800 rounded hover:bg-gray-800 hover:text-white">注册</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="h-screen flex items-center justify-center text-center px-4">
+    <div class="max-w-2xl space-y-6 z-10" data-aos="fade-up">
+      <img src="/ns-logo.png" alt="NinesPro Logo" class="w-32 mx-auto" />
+      <h1 class="text-5xl md:text-6xl font-black tracking-tight text-gray-900">掌握第九领域</h1>
+      <p class="text-lg text-gray-500">极简之中，蕴藏非凡力量</p>
+      <a href="#about" class="inline-block mt-6 px-6 py-3 bg-black text-white rounded-full hover:bg-gray-900 transition">了解更多</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-20 px-6 bg-white text-center">
+    <h2 class="text-3xl font-bold mb-4">关于我们</h2>
+    <p class="text-gray-600 max-w-xl mx-auto mb-6">NinesPro 致力于融合科技与艺术，通过极简与高端的设计语言，打造领先未来的数字体验。</p>
+    <video autoplay loop muted class="w-full max-w-3xl mx-auto rounded shadow">
+      <source src="/about-video.mp4" type="video/mp4">
+    </video>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-20 px-6 bg-gray-50 text-center">
+    <h2 class="text-3xl font-bold mb-10">我们的服务</h2>
+    <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
+      <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transition">
+        <h3 class="font-semibold text-xl mb-2">品牌设计</h3>
+        <img src="/brand.png" class="w-24 mx-auto mb-3" />
+        <p class="text-gray-500 text-sm">打造令人记住的视觉与故事。</p>
+      </div>
+      <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transition">
+        <h3 class="font-semibold text-xl mb-2">定制开发</h3>
+        <img src="/dev.png" class="w-24 mx-auto mb-3" />
+        <p class="text-gray-500 text-sm">前后端一体化平台开发，系统化支持。</p>
+      </div>
+      <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transition">
+        <h3 class="font-semibold text-xl mb-2">策略咨询</h3>
+        <img src="/strategy.png" class="w-24 mx-auto mb-3" />
+        <p class="text-gray-500 text-sm">精准定位市场趋势，提升品牌势能。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 px-6 bg-white text-center">
+    <h2 class="text-3xl font-bold mb-6">联系我们</h2>
+    <p class="text-gray-600 max-w-xl mx-auto mb-6">欢迎通过以下方式联系合作或咨询定制服务。</p>
+    <div class="max-w-md mx-auto space-y-6">
+      <div class="flex items-center justify-center space-x-4">
+        <span class="text-xl">📧</span>
+        <a href="mailto:you@example.com" class="text-gray-700 hover:text-black">you@example.com</a>
+      </div>
+      <img src="/qr-placeholder.png" alt="微信二维码" class="w-32 h-32 mx-auto rounded shadow border">
+    </div>
+  </section>
+
+  <!-- 登录注册 -->
+  <div id="modal-login" class="modal fixed inset-0 bg-black/40 items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-xl w-80">
+      <h2 class="text-xl font-semibold mb-4">登录</h2>
+      <input id="login-username" type="text" placeholder="用户名" class="w-full mb-3 p-2 border rounded">
+      <input id="login-password" type="password" placeholder="密码" class="w-full mb-3 p-2 border rounded">
+      <button onclick="loginUser()" class="w-full bg-black text-white py-2 rounded">提交</button>
+      <p id="login-message" class="text-sm text-red-600 mt-2 hidden"></p>
+    </div>
+  </div>
+
+  <div id="modal-register" class="modal fixed inset-0 bg-black/40 items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-xl w-80">
+      <h2 class="text-xl font-semibold mb-4">注册</h2>
+      <input id="reg-username" type="text" placeholder="用户名" class="w-full mb-3 p-2 border rounded">
+      <input id="reg-email" type="email" placeholder="邮箱" class="w-full mb-3 p-2 border rounded">
+      <input id="reg-password" type="password" placeholder="密码" class="w-full mb-3 p-2 border rounded">
+      <button onclick="registerUser()" class="w-full bg-black text-white py-2 rounded">提交</button>
+      <p id="register-message" class="text-sm text-red-600 mt-2 hidden"></p>
+    </div>
+  </div>
+
+  <footer class="bg-white text-center py-6 text-sm text-gray-400">
+    © 2025 NinesPro. All Rights Reserved.
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function toggleModal(type) {
+      document.getElementById('modal-login').classList.remove('active');
+      document.getElementById('modal-register').classList.remove('active');
+      document.getElementById(`modal-${type}`).classList.add('active');
+    }
+
+    const users = [{ username: 'admin', password: '123456' }];
+
+    function loginUser() {
+      const username = document.getElementById('login-username').value;
+      const password = document.getElementById('login-password').value;
+      const message = document.getElementById('login-message');
+      const user = users.find(u => u.username === username && u.password === password);
+      if (user) {
+        message.classList.remove('text-red-600');
+        message.classList.add('text-green-600');
+        message.textContent = '登录成功';
+      } else {
+        message.textContent = '用户名或密码错误';
+        message.classList.remove('hidden');
+      }
+    }
+
+    function registerUser() {
+      const username = document.getElementById('reg-username').value;
+      const password = document.getElementById('reg-password').value;
+      const email = document.getElementById('reg-email').value;
+      const message = document.getElementById('register-message');
+      if (users.find(u => u.username === username)) {
+        message.textContent = '用户名已存在';
+      } else {
+        users.push({ username, password });
+        message.classList.remove('text-red-600');
+        message.classList.add('text-green-600');
+        message.textContent = '注册成功';
+      }
+      message.classList.remove('hidden');
+    }
+  </script>
+</body>
+
+</html>
       background: rgba(255, 255, 255, 0.2);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.3);
